@@ -30,39 +30,39 @@ const resetGame = function () {
   cpuChoiceEl.textContent = '';
 };
 
+const cpuWins = function () {
+  cpuScore++;
+  cpuScoreEl.textContent = cpuScore;
+  winnerEl.textContent = 'Computer';
+};
+
+const playerWins = function () {
+  playerScore++;
+  playerScoreEl.textContent = playerScore;
+  winnerEl.textContent = 'Player';
+};
+
 const playRound = function (playerChoice) {
   const checkWinner = function () {
     if (cpuChoice === playerChoice) {
       winnerEl.textContent = 'Neither';
     } else if (cpuChoice === 'Rock') {
       if (playerChoice === 'Scissors') {
-        cpuScore++;
-        cpuScoreEl.textContent = cpuScore;
-        winnerEl.textContent = 'Computer';
+        cpuWins();
       } else {
-        playerScore++;
-        playerScoreEl.textContent = playerScore;
-        winnerEl.textContent = 'Player';
+        playerWins();
       }
     } else if (cpuChoice === 'Paper') {
       if (playerChoice === 'Rock') {
-        cpuScore++;
-        cpuScoreEl.textContent = cpuScore;
-        winnerEl.textContent = 'Computer';
+        cpuWins();
       } else {
-        playerScore++;
-        playerScoreEl.textContent = playerScore;
-        winnerEl.textContent = 'Player';
+        playerWins();
       }
     } else if (cpuChoice === 'Scissors') {
       if (playerChoice === 'Rock') {
-        playerScore++;
-        playerScoreEl.textContent = playerScore;
-        winnerEl.textContent = 'Player';
+        playerWins();
       } else {
-        cpuScore++;
-        cpuScoreEl.textContent = cpuScore;
-        winnerEl.textContent = 'Computer';
+        cpuWins();
       }
     }
   };
