@@ -6,13 +6,18 @@
   margin: 1rem;
 }
 
-:root {
-  --dark: #502646;
-  --light: #cfafc8;
+:root.dark {
+  --one: #502646;
+  --two: #cfafc8;
+}
+
+:root.light {
+  --one: #cfafc8;
+  --two: #502646;
 }
 
 body {
-  background-color: var(--dark);
+  background-color: var(--one);
   text-align: center;
 }
 
@@ -23,7 +28,7 @@ h4,
 h5,
 h6,
 p {
-  color: var(--light);
+  color: var(--two);
 }
 
 .flex {
@@ -40,8 +45,8 @@ p {
 }
 
 button {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--two);
+  color: var(--one);
   padding: 1rem 3rem;
   border-radius: 999px;
 }

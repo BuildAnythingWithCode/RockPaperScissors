@@ -3,6 +3,7 @@ rockBtn = document.querySelector('#rock-btn');
 paperBtn = document.querySelector('#paper-btn');
 scissorsBtn = document.querySelector('#scissors-btn');
 resetBtn = document.querySelector('#reset-btn');
+toggleTheme = document.querySelector('#toggle-theme');
 
 // Elements
 playerChoiceEl = document.querySelector('#player-choice');
@@ -16,11 +17,6 @@ let cpuScore = 0;
 let playerScore = 0;
 
 // Functions
-// const logScore = function (playerChoice, cpuChoice) {
-//   playerChoiceEl.textContent = playerChoice;
-//   cpuChoiceEl.textContent = cpuChoice;
-// };
-
 const resetGame = function () {
   let cpuScore = 0;
   let playerScore = 0;
@@ -81,8 +77,15 @@ const playRound = function (playerChoice) {
   checkWinner();
 };
 
+const changeTheme = function () {
+  document.documentElement.className === 'dark'
+    ? (document.documentElement.className = 'light')
+    : (document.documentElement.className = 'dark');
+};
+
 // Event Listeners
 rockBtn.addEventListener('click', () => playRound('Rock'));
 paperBtn.addEventListener('click', () => playRound('Paper'));
 scissorsBtn.addEventListener('click', () => playRound('Scissors'));
 resetBtn.addEventListener('click', resetGame);
+toggleTheme.addEventListener('click', changeTheme);
