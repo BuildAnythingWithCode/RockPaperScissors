@@ -1,16 +1,18 @@
+'use strict';
+
 // Buttons
-rockBtn = document.querySelector('#rock-btn');
-paperBtn = document.querySelector('#paper-btn');
-scissorsBtn = document.querySelector('#scissors-btn');
-resetBtn = document.querySelector('#reset-btn');
-toggleTheme = document.querySelector('#toggle-theme');
+const rockBtn = document.querySelector('#rock-btn');
+const paperBtn = document.querySelector('#paper-btn');
+const scissorsBtn = document.querySelector('#scissors-btn');
+const resetBtn = document.querySelector('#reset-btn');
+const toggleTheme = document.querySelector('#toggle-theme');
 
 // Elements
-playerChoiceEl = document.querySelector('#player-choice');
-cpuChoiceEl = document.querySelector('#cpu-choice');
-winnerEl = document.querySelector('#winner');
-cpuScoreEl = document.querySelector('#cpu-score');
-playerScoreEl = document.querySelector('#player-score');
+const playerChoiceEl = document.querySelector('#player-choice');
+const cpuChoiceEl = document.querySelector('#cpu-choice');
+const winnerEl = document.querySelector('#winner');
+const cpuScoreEl = document.querySelector('#cpu-score');
+const playerScoreEl = document.querySelector('#player-score');
 
 // Values
 let cpuScore = 0;
@@ -18,12 +20,13 @@ let playerScore = 0;
 
 // Functions
 const resetGame = function () {
-  let cpuScore = 0;
-  let playerScore = 0;
+  cpuScore = 0;
+  playerScore = 0;
   cpuScoreEl.textContent = cpuScore;
   playerScoreEl.textContent = playerScore;
   playerChoiceEl.textContent = '';
   cpuChoiceEl.textContent = '';
+  winnerEl.textContent = '';
 };
 
 const cpuWins = function () {
@@ -78,9 +81,7 @@ const playRound = function (playerChoice) {
 };
 
 const changeTheme = function () {
-  document.documentElement.className === 'dark'
-    ? (document.documentElement.className = 'light')
-    : (document.documentElement.className = 'dark');
+  document.documentElement.classList.toggle('light');
 };
 
 // Event Listeners

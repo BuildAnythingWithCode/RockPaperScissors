@@ -5,7 +5,7 @@
   border: 0px solid red;
 }
 
-:root.dark {
+:root {
   --one: #502646;
   --two: #cfafc8;
 }
