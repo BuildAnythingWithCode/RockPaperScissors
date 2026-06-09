@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
   border: 0px solid red;
-  margin: 1rem;
 }
 
 :root.dark {
@@ -19,6 +18,8 @@
 body {
   background-color: var(--one);
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1,
@@ -34,6 +35,8 @@ p {
 .flex {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .column {
@@ -57,4 +60,10 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .rps-buttons {
+    flex-direction: column;
+  }
 }
