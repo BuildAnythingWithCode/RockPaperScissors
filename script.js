@@ -1,11 +1,22 @@
 'use strict';
 
 // Buttons
-const rockBtn = document.querySelector('#rock-btn');
-const paperBtn = document.querySelector('#paper-btn');
-const scissorsBtn = document.querySelector('#scissors-btn');
-const resetBtn = document.querySelector('#reset-btn');
-const toggleTheme = document.querySelector('#toggle-theme');
+
+const button = {
+  rock: document.querySelector('#rock-btn'),
+  paper: document.querySelector('#paper-btn'),
+  scissors: document.querySelector('#scissors-btn'),
+  reset: document.querySelector('#reset-btn'),
+  toggleTheme: document.querySelector('#toggle-theme'),
+};
+
+// Refactored into an object above!
+
+// const rockBtn = document.querySelector('#rock-btn');
+// const paperBtn = document.querySelector('#paper-btn');
+// const scissorsBtn = document.querySelector('#scissors-btn');
+// const resetBtn = document.querySelector('#reset-btn');
+// const toggleTheme = document.querySelector('#toggle-theme');
 
 // Elements
 const playerChoiceEl = document.querySelector('#player-choice');
@@ -85,8 +96,8 @@ const changeTheme = function () {
 };
 
 // Event Listeners
-rockBtn.addEventListener('click', () => playRound('Rock'));
-paperBtn.addEventListener('click', () => playRound('Paper'));
-scissorsBtn.addEventListener('click', () => playRound('Scissors'));
-resetBtn.addEventListener('click', resetGame);
-toggleTheme.addEventListener('click', changeTheme);
+button.rock.addEventListener('click', () => playRound('Rock'));
+button.paper.addEventListener('click', () => playRound('Paper'));
+button.scissors.addEventListener('click', () => playRound('Scissors'));
+button.reset.addEventListener('click', resetGame);
+button.toggleTheme.addEventListener('click', changeTheme);
